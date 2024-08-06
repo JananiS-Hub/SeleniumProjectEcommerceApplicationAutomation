@@ -1,0 +1,112 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SeleniumCoursePractice</groupId>
+  <artifactId>ECommerceApplicationAutomation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+  <dependencies>
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.23.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.1.2</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.10.2</version>
+    <scope>compile</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.9.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.17.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.18.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>7.18.1</version>
+</dependency>
+
+  	<dependency>
+  		<groupId>SeleniumTutorials</groupId>
+  		<artifactId>SeleniumTutorials</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  
+ <profiles> 
+	 <profile>
+		 <id>profile1</id>
+   			<build>
+   				<pluginManagement>
+    				<plugins>
+						<plugin>
+        					<groupId>org.apache.maven.plugins</groupId>
+        					<artifactId>maven-surefire-plugin</artifactId>
+        					<version>3.3.1</version>
+        					<configuration>
+         						<suiteXmlFiles>
+            						<suiteXmlFile>TestNGSuites/dataProvider.xml</suiteXmlFile>
+          						</suiteXmlFiles>
+        					</configuration>
+      					</plugin>
+      				</plugins>
+     			</pluginManagement>
+      		</build>
+      </profile>
+</profiles>
+    
+      
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
+      </plugin>
+     <!-- Running one particular TestNg Files using commandpromt-->
+     <!-- <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>-->
+      
+    </plugins>
+  </build>
+</project>
